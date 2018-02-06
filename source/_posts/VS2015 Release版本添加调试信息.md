@@ -5,7 +5,9 @@ categories: 调试
 tags: windows
 ---
 
-> Release版本添加调试信息配置如下
+> Release版本添加调试信息配置如下:
+
+<!--more-->
 
 
 ![配置1](http://otfqaruit.bkt.clouddn.com/release_set.png)
