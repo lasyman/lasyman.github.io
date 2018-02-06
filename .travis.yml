@@ -20,14 +20,16 @@ before_install:
   - git clone https://github.com/iissnan/hexo-theme-next themes/next
   - cp themes/_config.yml next
 
+before_script:
+  - git config --global user.name "lasyman"
+  - git config --global user.email "xingpeng2010@126.com"
+  - sed -i'' "s~git@github.com:lasyman/lasyman.github.io.git~https://${REPO_TOKEN}@github.com/lasyman/lasyman.github.io.git~" _config.yml
+
 install:
   - npm install # 安装 package.json 中的插件
 script:
+  - hexo clean
   - hexo generate
 after_success:
-  - git config --global user.name "lasyman"
-  - git config --global user.email "xingpeng2010@126.com"
-  - echo ${REPO_TOKEN}
-  - sed -i'' "s~git@github.com:lasyman/lasyman.github.io.git~https://${REPO_TOKEN}@github.com/lasyman/lasyman.github.io.git~" _config.yml 
   - hexo deploy
 # E: Build LifeCycle
