@@ -26,5 +26,5 @@ script:
 after_success:
   - git config --global user.name "lasyman"
   - git config --global user.email "xingpeng2010@126.com"
-  - hexo deploy
+  - hexo d
 # E: Build LifeCycle
