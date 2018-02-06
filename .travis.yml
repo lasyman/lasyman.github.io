@@ -28,6 +28,9 @@ before_script:
 
 install:
   - npm install # 安装 package.json 中的插件
+  - npm install hexo-generator-feed --save
+  - npm install hexo-deployer-git --save
+  - npm install hexo-generator-sitemap --save
 script:
   - hexo clean
   - hexo generate
