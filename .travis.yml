@@ -22,6 +22,7 @@ before_script:
 - git config --global user.name "lasyman"
 - git config --global user.email lasyman@163.com
 - sed -i'' "s~git@github.com:lasyman/lasyman.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/lasyman/lasyman.github.io.git~" _config.yml
+- cp themes/_config.yml next
 install:
 - npm install
 script:
