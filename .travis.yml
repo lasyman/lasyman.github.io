@@ -4,7 +4,7 @@ node_js: stable
 branches:
   only:
     - blog_source
-	
+#token	
 env:
   global:
     secure: 93706756c97f274fbe95375fa904a53298e15780
@@ -31,5 +31,4 @@ after_success:
   - git config --global user.name "lasyman"
   - git config --global user.email "xingpeng2010@126.com"
   - hexo deploy
- 
 # E: Build LifeCycle
