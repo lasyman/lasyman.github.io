@@ -3,14 +3,15 @@ node_js: stable
 # assign build branches
 branches:
   only:
-    - blog-source
+    - blog_source
 # cache this directory
 cache:
   directories:
     - node_modules
 # S: Build Lifecycle
 before_install:
-  - openssl aes-256-cbc -K $encrypted_ef3ab21a131e_key -iv $encrypted_ef3ab21a131e_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - openssl version
+  - openssl aes-256-cbc -K $encrypted_ef3ab21a131e_key -iv $encrypted_ef3ab21a131e_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)
   - ssh-add ~/.ssh/id_rsa
@@ -18,7 +19,6 @@ before_install:
   - npm install -g hexo-cli # 安装 hexo
   - git clone https://github.com/iissnan/hexo-theme-next themes/next
   - cp themes/_config.yml next
-  - cat _confg.yml
 install:
   - npm install # 安装 package.json 中的插件
 script:
