@@ -1,0 +1,13 @@
+---
+title: VS2015 Release版本添加调试信息
+date: 2018-01-02 18:47:43
+categories: 调试
+tags: windows
+---
+
+> Release版本添加调试信息配置如下
+
+
+![配置1](http://otfqaruit.bkt.clouddn.com/release_set.png)
+
+![配置2](http://otfqaruit.bkt.clouddn.com/release_set1.png)
