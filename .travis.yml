@@ -20,6 +20,7 @@ before_install:
   - git clone https://github.com/lasyman/Hexo_Next.git themes/next
 install:
   - npm install # 安装 package.json 中的插件
+  - npm i --save hexo-wordcount
 script:
   - hexo generate
 after_success:
