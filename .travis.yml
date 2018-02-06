@@ -18,6 +18,7 @@ before_install:
   - npm install -g hexo-cli # 安装 hexo
   - git clone https://github.com/iissnan/hexo-theme-next themes/next
   - cp themes/_config.yml next
+  - cat _confg.yml
 install:
   - npm install # 安装 package.json 中的插件
 script:
