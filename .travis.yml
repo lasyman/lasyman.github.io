@@ -24,6 +24,7 @@ before_script:
   - git config --global user.name "lasyman"
   - git config --global user.email "xingpeng2010@126.com"
   - sed -i'' "s~git@github.com:lasyman/lasyman.github.io.git~https://${GITHUB_TOKEN}@github.com/lasyman/lasyman.github.io.git~" _config.yml
+  - cat _config.yml
 
 install:
   - npm install # 安装 package.json 中的插件
