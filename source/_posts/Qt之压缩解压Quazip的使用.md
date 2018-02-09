@@ -9,6 +9,7 @@ tags: Quazip
 > Qt下进行压缩解压有两种方案： 1. 通过QProcess调用第三方工具，如:7zip等 2. 通过第三方库，如:Quazip
 > 本文主要介绍Qt如何使用Quazip进行压缩解压操作
 
+<!--more-->
 ## 环境
 1. windows 10
 2. Qt5.4 mingw版本 和Qt5.9 msvc版本
