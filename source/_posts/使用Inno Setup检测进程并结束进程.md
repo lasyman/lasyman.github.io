@@ -117,7 +117,7 @@ end;
 
 ```
 
-## 通过isTask.dll进行检测
+## 二、通过isTask.dll进行检测
 同样将其放到脚本所在目录即可
 
 ```
@@ -166,3 +166,7 @@ begin
   Result:= true;
 end;
 ```
+
+## 三、资源
+[psvince.dll](http://ougipk3bp.bkt.clouddn.com/psvince.dll)
+[istask.dll](http://ougipk3bp.bkt.clouddn.com/istask.dll)
