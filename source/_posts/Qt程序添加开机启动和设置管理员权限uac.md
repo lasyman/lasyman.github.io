@@ -61,8 +61,8 @@ QMAKE_LFLAGS += /MANIFESTUAC:\"level=\'requireAdministrator\' uiAccess=\'false\'
 ```
 "mt.exe" -manifest "uac.manifest" -outputresource:"xxx.exe";#1
 ```
-[uac.bat](http://ougipk3bp.bkt.clouddn.com/uac.bat "uac.bat")
-[uac.manifest](http://ougipk3bp.bkt.clouddn.com/uac.manifest "uac.manifest")
-[mt.exe](http://ougipk3bp.bkt.clouddn.com/mt.exe)
+[uac.bat](http://blog-res.oss-cn-hongkong.aliyuncs.com/resource/uac.bat "uac.bat")
+[uac.manifest](http://blog-res.oss-cn-hongkong.aliyuncs.com/resource/uac.manifest "uac.manifest")
+[mt.exe](http://blog-res.oss-cn-hongkong.aliyuncs.com/resource/mt.exe)
 
 这样程序就会带上小盾牌了。

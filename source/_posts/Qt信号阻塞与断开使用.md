@@ -40,7 +40,7 @@ void enableCheck(bool bCheck)
 ```
 
 ### 信号断开
-![](http://otfqaruit.bkt.clouddn.com/signal_disconnect.png)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/signal_disconnect.png)
 
 用信号断开可以选择要断开的信号
 

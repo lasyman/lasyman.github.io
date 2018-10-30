@@ -20,7 +20,7 @@ void unsetCursor();
 ```
 三个方法，因而对于一切直接或间接继承自QWidget的控件都可以设置鼠标进入控件范围的鼠标形状。
 默认鼠标样式如下：
-![](http://otfqaruit.bkt.clouddn.com/mouse_cursor.png)
+![](https://blog-res.oss-cn-hongkong.aliyuncs.com/pics/mouse_cursor.png)
 
 2. 使用图片
 方法如下：

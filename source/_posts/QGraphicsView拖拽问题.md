@@ -34,7 +34,7 @@ void MyGraphicsView::mouseMoveEvent(QMouseEvent *event)
 }
 ```
 效果：
-![](http://otfqaruit.bkt.clouddn.com/QGraphicsView_move1.gif)
+![](https://blog-res.oss-cn-hongkong.aliyuncs.com/pics/QGraphicsView_move1.gif)
 
 这种方式能够平移拖拽但是必须是放大后才可以，我想要的效果是任何时候都可以，就类似于view无限大。
 
@@ -58,4 +58,4 @@ void MyGraphicsView::mouseMoveEvent(QMouseEvent *event)
 }
 ```
 效果如下:
-![](http://otfqaruit.bkt.clouddn.com/QGraphicsView_move2.gif)
+![](https://blog-res.oss-cn-hongkong.aliyuncs.com/pics/QGraphicsView_move2.gif)
