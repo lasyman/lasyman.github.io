@@ -10,6 +10,8 @@ tags:
 
 ### 实现延时调用：
 
+<!--more-->
+
 ```
 #include<iostream>// std::cout
 #include<functional>// std::function
