@@ -14,7 +14,7 @@ tags:
 
 ##### 一、 C++调用Python方法
 - 定义Python方法
-```
+```python
 // hello.py
 def hello():
 	print("Hello python")
@@ -26,7 +26,7 @@ def hello1(args):
 2. 链接对应的lib库 python34.lib 
 
 - C++调用Python
-```
+```c++
 int main(int argc, char* argv[])
 // 1.初始化python模块
 Py_Initialize();
@@ -77,7 +77,7 @@ Python3中移除了PyInstance_New 暂未找到对应方法实现调用类
 ##### 三、 C++执行Python文件
 前提是Python中有定义main入口并调用方法
 - 修改hello.py如下
-```
+```python
 // hello.py
 def hello():
 	print("Hello python")
@@ -89,7 +89,7 @@ if __name__ == '__main__':
 ```
 
 - C++main函数调用
-```
+```c++
 int main(int argc, char* argv[])
 {
 	Py_Initialize();
@@ -109,3 +109,4 @@ int main(int argc, char* argv[])
 
 参考：
 [[C++/Python] 如何在C++中使用一个Python类? (Use Python-defined class in C++)](http://www.cnblogs.com/lancelod/p/4036922.html)
+
