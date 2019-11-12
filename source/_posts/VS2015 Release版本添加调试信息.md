@@ -10,6 +10,6 @@ tags: windows
 <!--more-->
 
 
-![配置1](http://otfqaruit.bkt.clouddn.com/release_set.png)
+![配置1](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/release_set.png)
 
-![配置2](http://otfqaruit.bkt.clouddn.com/release_set1.png)
+![配置2](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/release_set1.png)

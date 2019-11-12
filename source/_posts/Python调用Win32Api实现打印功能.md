@@ -21,11 +21,11 @@ pip install pywin32
 ## 二、 win32 Api的相关说明
 
 [http://timgolden.me.uk/pywin32-docs/win32_modules.html](http://timgolden.me.uk/pywin32-docs/win32_modules.html)
-![](http://otfqaruit.bkt.clouddn.com/win32Api%E6%96%87%E6%A1%A3.png)
+![](https://blog-res.oss-cn-hongkong.aliyuncs.com/pics/win32Api%E6%96%87%E6%A1%A3.png)
 
 根据需要选择对应模块，里面有相关的方法和简要说明，本文使用的是win32print
 
 
 下面文档中有不同场景的打印示例，如打印文字的使用，打印图片的使用方法等。
 
-[用Python在windows系统中打印.pdf](http://ougipk3bp.bkt.clouddn.com/%E7%94%A8Python%E5%9C%A8windows%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%93%E5%8D%B0.pdf)
+[用Python在windows系统中打印.pdf](http://blog-res.oss-cn-hongkong.aliyuncs.com/resource/%E7%94%A8Python%E5%9C%A8windows%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%93%E5%8D%B0.pdf)

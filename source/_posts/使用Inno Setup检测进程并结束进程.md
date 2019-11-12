@@ -168,5 +168,5 @@ end;
 ```
 
 ## 三、资源
-[psvince.dll](http://ougipk3bp.bkt.clouddn.com/psvince.dll)
-[istask.dll](http://ougipk3bp.bkt.clouddn.com/istask.dll)
+[psvince.dll](http://blog-res.oss-cn-hongkong.aliyuncs.com/resource/psvince.dll)
+[istask.dll](http://blog-res.oss-cn-hongkong.aliyuncs.com/resource/istask.dll)

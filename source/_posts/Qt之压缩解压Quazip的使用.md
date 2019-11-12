@@ -26,7 +26,7 @@ tags: Quazip
 TEMPLATE=subdirs
 SUBDIRS=quazip
 ```
-![目录结构如下](http://otfqaruit.bkt.clouddn.com/quazip1.jpg)
+![目录结构如下](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/quazip1.jpg)
 
 2. 修改子项目quazip的工程文件quazip.pro，在末尾添加如下头文件路径(注意: QTDIR环境变量是Qt的目录，如:D:\Qt\Qt5.4.1\5.4\mingw491_32)
 ```

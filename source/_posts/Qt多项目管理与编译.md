@@ -11,29 +11,29 @@ tags: Qt子项目
 
 # 多模块Qt项目创建 #
 ### 创建多项目目录
-![](http://otfqaruit.bkt.clouddn.com/multiProj1.jpg)
-![](http://otfqaruit.bkt.clouddn.com/multiProj2.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj1.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj2.jpg)
 
 ### 创建子项目
 * 如果程序是app程序是带界面的，则需要创建一个widgets application
-![](http://otfqaruit.bkt.clouddn.com/multiProj3.jpg)
-![](http://otfqaruit.bkt.clouddn.com/multiProj4.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj3.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj4.jpg)
 
 * 创建library1 
-![](http://otfqaruit.bkt.clouddn.com/multiProj5.jpg)
-![](http://otfqaruit.bkt.clouddn.com/multiProj6.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj5.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj6.jpg)
 
 * 选择模块
-![](http://otfqaruit.bkt.clouddn.com/multiProj7.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj7.jpg)
 
 * 总体结构如下
-![](http://otfqaruit.bkt.clouddn.com/multiProj8.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj8.jpg)
 
 * 配置总工程
-![](http://otfqaruit.bkt.clouddn.com/multiProj9.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj9.jpg)
 
 * 配置子项目
-![](http://otfqaruit.bkt.clouddn.com/multiProj10.jpg)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/multiProj10.jpg)
 
 至此一个多项目工程就建好了
 

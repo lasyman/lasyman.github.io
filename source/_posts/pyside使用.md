@@ -15,20 +15,20 @@ tags: pyside
 pip install PySide
 ```
 如果没有出错表示安装成功了，测试PySide的版本
-![](http://otfqaruit.bkt.clouddn.com/pyside_1.png)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/pyside_1.png)
 
 - 下载Pyside的安装包
 [下载路径](http://mirrors.ustc.edu.cn/qtproject/official_releases/pyside)
 
 #### 2 使用Pyside
 - 通过QtDesigner设计一个简单的登陆界面，并保存为login.ui
-![](http://otfqaruit.bkt.clouddn.com/pyside_2.png)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/pyside_2.png)
 - 通过PySide-uic命令生成对应的python文件
 ```
 pyside-uic login.ui -o ui_login.py
 ```
 - 使用Qt界面文件ui_login.py
-![](http://otfqaruit.bkt.clouddn.com/pyside_3.png)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/pyside_3.png)
 
 这样就可以调用Qt界面了，控件属性跟Qt使用基本一样
 
@@ -99,7 +99,7 @@ def setStyle(self, Form):
 self.ui.setStyle(self)
 ```
 最后效果：
-![](http://otfqaruit.bkt.clouddn.com/pyside_4.png)
+![](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/pyside_4.png)
 
-[测试源码](http://ougipk3bp.bkt.clouddn.com/pyside_test.zip)
+[测试源码](http://blog-res.oss-cn-hongkong.aliyuncs.com/pics/pyside_test.zip)
 
