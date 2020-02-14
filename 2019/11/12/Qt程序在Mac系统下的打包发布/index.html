@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "32dd4f78"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Qt,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="平时都是在Windows下开发Qt程序，对于打包发布有各种方法，也是比较简单的。最近需要把程序在Mac下编译发布一版，网上的各种教程都是零零碎碎的，而且有的教程也是版本比较老的了，对于我用的Mac OS 10.15不太适用，经过一番google和尝试终于成功了，在此记录一下。">
+<meta name="keywords" content="Qt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 下Qt程序的打包发布（DMG版本）">
+<meta property="og:url" content="http://lasyman.github.io/2019/11/12/Qt程序在Mac系统下的打包发布/index.html">
+<meta property="og:site_name" content="lasyman的博客">
+<meta property="og:description" content="平时都是在Windows下开发Qt程序，对于打包发布有各种方法，也是比较简单的。最近需要把程序在Mac下编译发布一版，网上的各种教程都是零零碎碎的，而且有的教程也是版本比较老的了，对于我用的Mac OS 10.15不太适用，经过一番google和尝试终于成功了，在此记录一下。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%851.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%852.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%853.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%854.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%855.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%856.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%857.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%858.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%859.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8510.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8511.png">
+<meta property="og:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8512.png">
+<meta property="og:updated_time" content="2020-02-14T04:47:25.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac 下Qt程序的打包发布（DMG版本）">
+<meta name="twitter:description" content="平时都是在Windows下开发Qt程序，对于打包发布有各种方法，也是比较简单的。最近需要把程序在Mac下编译发布一版，网上的各种教程都是零零碎碎的，而且有的教程也是版本比较老的了，对于我用的Mac OS 10.15不太适用，经过一番google和尝试终于成功了，在此记录一下。">
+<meta name="twitter:image" content="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%851.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lasyman.github.io/2019/11/12/Qt程序在Mac系统下的打包发布/">
+
+
+
+
+
+  <title>Mac 下Qt程序的打包发布（DMG版本） | lasyman的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lasyman的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lasyman.github.io/2019/11/12/Qt程序在Mac系统下的打包发布/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lasyman">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lasyman的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mac 下Qt程序的打包发布（DMG版本）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T02:47:43+00:00">
+                2019-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Qt/" itemprop="url" rel="index">
+                    <span itemprop="name">Qt</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/12/Qt程序在Mac系统下的打包发布/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/12/Qt程序在Mac系统下的打包发布/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>平时都是在Windows下开发Qt程序，对于打包发布有各种方法，也是比较简单的。最近需要把程序在Mac下编译发布一版，网上的各种教程都是零零碎碎的，而且有的教程也是版本比较老的了，对于我用的Mac OS 10.15不太适用，经过一番google和尝试终于成功了，在此记录一下。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、程序打包"><a href="#一、程序打包" class="headerlink" title="一、程序打包"></a>一、程序打包</h2><p>使用QtCreator编译成release版本之后，会生成一个.app的目录，这个目录就是Mac下的可执行文件，叫做bundle包。</p>
+<ul>
+<li><ol>
+<li>无第三方库</li>
+</ol>
+<p>如果程序没有第三方链接库的话，打包还是比较简单的，使用Qt自带的命令就可以完成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> macdeloyqt appname.app -dmg</span><br></pre></td></tr></table></figure>
+<p>执行完命令后，就会在对应目录下生成一个dmg的磁盘文件，此时程序交给其他人就可以正常打开运行了。当然这个dmg文件比较简陋，没有像我们下载其他程序那样好看，后面会讲如何美化我们的程序包。</p>
+</li>
+<li><ol start="2">
+<li>有第三方库</li>
+</ol>
+<p>如果程序使用了第三方库，那么通过上述命令打包的执行文件是无法运行的，会Library not loaded的错误。</p>
+<p>如：我一个程序叫MyApp，引用了一个动态连结库叫MyLib，将动态链接库拷贝到对应目录，完成编辑。</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%851.png" alt="pic1"></p>
+<p>双击MyApp，会报如下错误：</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%852.png" alt="pic2"></p>
+</li>
+</ul>
+<p>  如果程序依赖多个第三方库，可以通过如下命令进行查看：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> otool -L MyApp.app/Contents/MacOS/MyApp</span><br><span class="line"></span><br><span class="line">MyApp.app/Contents/MacOS/MyApp:</span><br><span class="line">	libMyLib.1.dylib (compatibility version 1.0.0, current version 1.0.0)</span><br><span class="line">	@rpath/QtWidgets.framework/Versions/5/QtWidgets (compatibility version 5.12.0, current version 5.12.3)</span><br><span class="line">	@rpath/QtGui.framework/Versions/5/QtGui (compatibility version 5.12.0, current version 5.12.3)</span><br><span class="line">	@rpath/QtCore.framework/Versions/5/QtCore (compatibility version 5.12.0, current version 5.12.3)</span><br><span class="line">	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration (compatibility version 1.0.0, current version 1.0.0)</span><br><span class="line">	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit (compatibility version 1.0.0, current version 275.0.0)</span><br><span class="line">	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)</span><br><span class="line">	/System/Library/Frameworks/AGL.framework/Versions/A/AGL (compatibility version 1.0.0, current version 1.0.0)</span><br><span class="line">	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 800.6.0)</span><br><span class="line">	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1281.0.0)</span><br></pre></td></tr></table></figure>
+<p>  可以看到MyApp依赖于libMyLib.1.dylib 库，对于一些路径的变量如@rpath等可以百度进行了解，此处@rpath是Frameworks目录</p>
+<p>  为了修复依赖我们需要以下几个步骤：</p>
+<ul>
+<li><p>创建Frameworks目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> mkdir -p MyApp.app/Contents/Frameworks</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>拷贝第三方库到Frameworks目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cp libMyLib.1.dylib MyApp.app/Contents/Frameworks/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>修复依赖关系</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> install_name_tool -change "libMyLib.1.dylib" "@rpath/libMyLib.1.dylib" MyApp.app/Contents/MacOS/MyApp</span><br></pre></td></tr></table></figure>
+<p>（⚠️：如果某个库依赖于其他库，也需要用上述命令修复依赖关系）</p>
+</li>
+<li><p>打包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> macdeloyqt MyApp.app -dmg</span><br></pre></td></tr></table></figure>
+<p>此时的APP就可以直接运行了，打包好的dmg文件可以拷贝给其他用户使用了。至此我们完成了打包的过程，接下来可以进行美化。</p>
+</li>
+</ul>
+<h2 id="二、程序包美化"><a href="#二、程序包美化" class="headerlink" title="二、程序包美化"></a>二、程序包美化</h2><p>添加图标</p>
+<ul>
+<li><p>右键bundle程序，显示包内容，进入Contents目录</p>
+</li>
+<li><p>修改Info.plist </p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%853.png" alt="pic3"></p>
+</li>
+<li><p>拷贝图标文件到Resources目录下</p>
+</li>
+<li><p>右键bundle程序，点击显示简介，拖拽图标到箭头位置</p>
+</li>
+</ul>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%854.png" alt="pic4"></p>
+<p>此时程序已经显示为我们想要显示的图标了。</p>
+<h3 id="三、-DMG美化"><a href="#三、-DMG美化" class="headerlink" title="三、 DMG美化"></a>三、 DMG美化</h3><h4 id="1-DMG添加图标"><a href="#1-DMG添加图标" class="headerlink" title="1. DMG添加图标"></a>1. DMG添加图标</h4><p>DMG文件也是可以添加图标的，原理跟程序包一样</p>
+<p>右键DMG文件，点击显示简介，拖拽图标到对应位置即可</p>
+<h4 id="2-DMG添加背景图"><a href="#2-DMG添加背景图" class="headerlink" title="2. DMG添加背景图"></a>2. DMG添加背景图</h4><p>如果要修改DMG背景图，之前生成的DMG文件就不能用了，因为是不可写的，那么就需要我们自己添加DMG文件。</p>
+<ul>
+<li><p>生成空的DMG磁盘</p>
+<p>从launchpad中找到磁盘工具-&gt;文件-&gt;新建映像-&gt;空白映像</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%855.png" alt="pic5"></p>
+<p>填入信息，如下图：</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%856.png" alt="pic6"></p>
+</li>
+<li><p>双击打开生成的DMG文件，如下图</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%857.png" alt="pic7"></p>
+</li>
+<li><p>在打开的finder中，右键-&gt;查看显示选项，添加背景图片</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%858.png" alt="pic8"></p>
+</li>
+</ul>
+<h4 id="3-添加应用程序到DMG"><a href="#3-添加应用程序到DMG" class="headerlink" title="3. 添加应用程序到DMG"></a>3. 添加应用程序到DMG</h4><p>将之前生成的app拖拽到DMG下</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%859.png" alt="pic9"></p>
+<h4 id="4-添加应用程序快捷方式"><a href="#4-添加应用程序快捷方式" class="headerlink" title="4. 添加应用程序快捷方式"></a>4. 添加应用程序快捷方式</h4><p>打开系统目录，找到应用程序，生成替身，将替身拖拽到DMG下，并改下名称即可</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8510.png" alt="pic10"></p>
+<h4 id="5-压缩DMG文件"><a href="#5-压缩DMG文件" class="headerlink" title="5. 压缩DMG文件"></a>5. 压缩DMG文件</h4><ul>
+<li><p>首先将上面打开的MyAPP.dmg弹出，打开磁盘工具-&gt;映像-&gt;转换</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8511.png" alt="pic11"></p>
+</li>
+<li><p>选择MyAPP.dmg</p>
+</li>
+<li><p>点击转换，DMG文件会根据APP的实际大小进行压缩</p>
+<p><img src="http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8512.png" alt="pic12"></p>
+</li>
+</ul>
+<h4 id="6-完善"><a href="#6-完善" class="headerlink" title="6. 完善"></a>6. 完善</h4><ul>
+<li>修改转换后的DMG文件名</li>
+<li>参考上述信息修改DMG图标</li>
+</ul>
+<p>至此整个打包，美化已经完成了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wx_qrcode.png" alt="lasyman wechat" style="width: 200px; max-width: 100%;">
+    <div></div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+	
+	 <div>
+    
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Qt/" rel="tag"><i class="fa fa-tag"></i> Qt</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/10/安装CentOS-7-Minimal配置/" rel="next" title="CentOS-7-Minimal配置">
+                <i class="fa fa-chevron-left"></i> CentOS-7-Minimal配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/12/Python之常用模块学习--glob/" rel="prev" title="Python之常用模块学习--glob">
+                Python之常用模块学习--glob <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="lasyman">
+          <p class="site-author-name" itemprop="name">lasyman</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/index.html">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lasyman" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="allanxing2014@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、程序打包"><span class="nav-number">1.</span> <span class="nav-text">一、程序打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、程序包美化"><span class="nav-number">2.</span> <span class="nav-text">二、程序包美化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三、-DMG美化"><span class="nav-number">2.1.</span> <span class="nav-text">三、 DMG美化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-DMG添加图标"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. DMG添加图标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-DMG添加背景图"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. DMG添加背景图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-添加应用程序到DMG"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 添加应用程序到DMG</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-添加应用程序快捷方式"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 添加应用程序快捷方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-压缩DMG文件"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. 压缩DMG文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-完善"><span class="nav-number">2.1.6.</span> <span class="nav-text">6. 完善</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lasyman</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://lasyman.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://lasyman.github.io/2019/11/12/Qt程序在Mac系统下的打包发布/';
+          this.page.identifier = '2019/11/12/Qt程序在Mac系统下的打包发布/';
+          this.page.title = 'Mac 下Qt程序的打包发布（DMG版本）';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://lasyman.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
