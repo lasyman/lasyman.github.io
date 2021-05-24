@@ -30,7 +30,7 @@ tags: Server
 # ip addr
 ```
 
-![网卡]( http://pics.wanjiabc.cn/工控机网络1.png )
+![1.png](http://nas.masterxx.top:10088/images/2021/05/23/1.png)
 
 此工控机有两个有线网络和一个无线网络，我们将网线插入LAN1，配置第一个网络
 
@@ -40,7 +40,7 @@ tags: Server
 # vi /etc/sysconfig/network-scripts/ifcfg-enp2s0
 ```
 
-![网络2]( http://pics.wanjiabc.cn/工控机网络2.png )
+![2.png](http://nas.masterxx.top:10088/images/2021/05/23/2.png)
 
 - 重启网络服务
 
@@ -72,7 +72,7 @@ tags: Server
 
 修改配置文件如下：
 
-![静态IP]( http://pics.wanjiabc.cn/工控机网络3.png )
+![3.png](http://nas.masterxx.top:10088/images/2021/05/23/3.png)
 
 - 重启网络服务
 

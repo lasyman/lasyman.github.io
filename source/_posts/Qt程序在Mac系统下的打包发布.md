@@ -31,11 +31,11 @@ tags: Qt
 
   如：我一个程序叫MyApp，引用了一个动态连结库叫MyLib，将动态链接库拷贝到对应目录，完成编辑。
 
-  ![pic1](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%851.png)
+  ![mac1.png](http://nas.masterxx.top:10088/images/2021/05/23/mac1.png)
 
   双击MyApp，会报如下错误：
 
-  ![pic2](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%852.png)
+  ![mac2.png](http://nas.masterxx.top:10088/images/2021/05/23/mac2.png)
 
   
 
@@ -101,13 +101,13 @@ tags: Qt
 
 - 修改Info.plist 
 
-  ![pic3](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%853.png)
+  ![mac3.png](http://nas.masterxx.top:10088/images/2021/05/23/mac3.png)
 
 - 拷贝图标文件到Resources目录下
 
 - 右键bundle程序，点击显示简介，拖拽图标到箭头位置
 
-![pic4](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%854.png)
+![mac4.png](http://nas.masterxx.top:10088/images/2021/05/23/mac4.png)
 
 此时程序已经显示为我们想要显示的图标了。
 
@@ -129,43 +129,43 @@ DMG文件也是可以添加图标的，原理跟程序包一样
 
   从launchpad中找到磁盘工具->文件->新建映像->空白映像
 
-  ![pic5](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%855.png)
+  ![mac5.png](http://nas.masterxx.top:10088/images/2021/05/23/mac5.png)
 
   填入信息，如下图：
 
-  ![pic6](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%856.png)
+  ![mac6.png](http://nas.masterxx.top:10088/images/2021/05/23/mac6.png)
 
 - 双击打开生成的DMG文件，如下图
 
-  ![pic7](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%857.png)
+  ![mac7.png](http://nas.masterxx.top:10088/images/2021/05/23/mac7.png)
 
 - 在打开的finder中，右键->查看显示选项，添加背景图片
 
-  ![pic8](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%858.png)
+  ![mac8.png](http://nas.masterxx.top:10088/images/2021/05/23/mac8.png)
 
 #### 3. 添加应用程序到DMG
 
 将之前生成的app拖拽到DMG下
 
-![pic9](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%859.png)
+![mac9.png](http://nas.masterxx.top:10088/images/2021/05/23/mac9.png)
 
 #### 4. 添加应用程序快捷方式
 
 打开系统目录，找到应用程序，生成替身，将替身拖拽到DMG下，并改下名称即可
 
-![pic10](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8510.png)
+![mac10.png](http://nas.masterxx.top:10088/images/2021/05/23/mac10.png)
 
 #### 5. 压缩DMG文件
 
 - 首先将上面打开的MyAPP.dmg弹出，打开磁盘工具->映像->转换
 
-  ![pic11](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8511.png)
+  ![mac11.png](http://nas.masterxx.top:10088/images/2021/05/23/mac11.png)
 
 - 选择MyAPP.dmg
 
 - 点击转换，DMG文件会根据APP的实际大小进行压缩
 
-  ![pic12](http://pics.wanjiabc.cn/mac%E6%89%93%E5%8C%8512.png)
+  ![mac12.png](http://nas.masterxx.top:10088/images/2021/05/23/mac12.png)
 
 #### 6. 完善
 

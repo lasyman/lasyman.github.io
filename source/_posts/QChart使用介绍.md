@@ -34,7 +34,7 @@ tags: QChart
 
 - 图表示例图
 
-![QSplineSeries](http://pics.wanjiabc.cn/QSplineSeries.png)
+![QSplineSeries.png](http://nas.masterxx.top:10088/images/2021/05/23/QSplineSeries.png)
 
 - 主要API介绍
 
@@ -59,7 +59,7 @@ tags: QChart
 
 - 图表示例图
 
-![QScatterSeries](http://pics.wanjiabc.cn/QScatterSeries.png)
+![QScatterSeries.png](http://nas.masterxx.top:10088/images/2021/05/23/QScatterSeries.png)
 
 - 主要API介绍
 
@@ -85,9 +85,9 @@ void setPointLabelsFormat(const QString &format);
 
 - 图表示例图
 
-  ![QPieSeries](http://pics.wanjiabc.cn/QPieSeries.png)
+  ![QPieSeries.png](http://nas.masterxx.top:10088/images/2021/05/23/QPieSeries.png)
 
-  ![QPieSeries](http://pics.wanjiabc.cn/QPieSeries1.png)
+  ![QPieSeries1.png](http://nas.masterxx.top:10088/images/2021/05/23/QPieSeries1.png)
 
 - 主要API介绍
 
